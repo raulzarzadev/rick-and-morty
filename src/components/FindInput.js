@@ -5,6 +5,7 @@ import "../styles/input-search.css";
 
 function FindInput() {
   const [search, setSearch] = useState("");
+  const [title, setTitle] = useState("Escribe el nombre de un personaje");
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -21,15 +22,32 @@ function FindInput() {
   const [charters, setCharters] = useState([]);
 
   useEffect(() => {
-    getCharacterByName(search)
-      .then((res) => setCharters(res.results))
-      .catch((err) => console.log(err));
+    if (search !== "") {
+      getCharacterByName(search)
+        .then((res) => {
+          if (res?.error) {
+            setTitle("¡Ups! No hay nadie llamado así por aquí");
+            setCharters([]);
+          } else {
+            console.log(res);
+            setTitle("Selecciona a uno de la lista para ver los detalles");
+            setCharters(res.results);
+          }
+        })
+        .catch((err) => console.log(err));
+    } else {
+      setCharters([]);
+      setTitle("Escribe el nombre de tu personaje favorito");
+    }
   }, [search]);
 
   console.log(charters);
 
   return (
     <div>
+      <div>
+        <h3>{title}</h3>
+      </div>
       <div className="search-box">
         <input
           className="search-input"
@@ -39,7 +57,6 @@ function FindInput() {
           id="find"
         />
       </div>
-      <div>Seleccina uno</div>
       <div className="characters">
         {charters.map((charter) => (
           <div className="characters_item">
