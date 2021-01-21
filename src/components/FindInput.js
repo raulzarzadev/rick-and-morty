@@ -72,6 +72,7 @@ function FindInput() {
       <div className="search-box">
         <input
           className="search-input"
+          placeholder="Personaje"
           onChange={handleChange}
           value={search}
           type="text"

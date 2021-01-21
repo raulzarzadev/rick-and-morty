@@ -4,7 +4,13 @@
     text-align: center;
 }
 
-.search-input {}
+.search-input {
+    border: none;
+    border-bottom: 2px solid red;
+    background: transparent;
+    text-align: center;
+    font-size: 25px;
+}
 
 
 
@@ -13,7 +19,7 @@
     padding: 8px;
     border-radius: 8px;
     border: 1px solid;
-    margin: 16px auto;
+    margin: 0 auto 30px;
 }
 
 .btn-clean:hover {

@@ -9,7 +9,7 @@ function App() {
       <header className="header">
         <div className="header-logo">logo</div>
         <div className="header-title">
-          Tu personaje favorito de Rick and Morty
+          Todos los personajes de Rick and Morty
         </div>
         <nav className="header-navbar">
           <ul className="navbar">
