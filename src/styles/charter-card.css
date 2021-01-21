@@ -1,11 +1,35 @@
 .charter {
-    border: 1px solid;
     margin: 8px;
     display: flex;
     align-items: center;
     width: 270px;
     padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+.charter:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.charter:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(167, 148, 148, 0.781);
+}
+
+.charter::after {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.9s;
+}
+
+
 
 
 .charter_image {
