@@ -11,7 +11,7 @@ Puede ver el estado actual del proyecto [aquí](https://rick-and-morty-steel.ver
 
 ## Uso
 
-1. Descarga el repocitorio
+1. Descarga el repositorio [rick-and-morty](https://github.com/raulzarzadev/rick-and-morty)
 2. Instala las dependencias
 
    ```
