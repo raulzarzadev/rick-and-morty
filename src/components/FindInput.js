@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/charter-card.css";
 import "../styles/characters.css";
+import "../styles/input-search.css";
 
 function FindInput() {
   const [search, setSearch] = useState("");
@@ -29,8 +30,14 @@ function FindInput() {
 
   return (
     <div>
-      <div>
-        <input onChange={handleChange} type="text" name="find" id="find" />
+      <div className="search-box">
+        <input
+          className="search-input"
+          onChange={handleChange}
+          type="text"
+          name="find"
+          id="find"
+        />
       </div>
       <div>Seleccina uno</div>
       <div className="characters">
