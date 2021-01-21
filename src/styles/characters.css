@@ -1,0 +1,26 @@
+.characters {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: lightblue;
+}
+
+.characters_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width:600px) {
+    .characters {
+        background-color: gray;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:960px) {
+    .characters {
+        background-color: lightgreen;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+

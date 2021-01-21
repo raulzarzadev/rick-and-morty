@@ -1,0 +1,42 @@
+.charter {
+    border: 1px solid;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    width: 270px;
+    padding: 8px;
+}
+
+
+.charter_image {
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.charter_info {
+    width: -webkit-fill-available
+}
+
+.charter_image--img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.charter_info--item {
+    width: inherit;
+}
+
+.item-left {
+    text-align: left;
+    width: 30%;
+}
+
+.item-rigth {
+    text-align: right;
+    width: auto;
+}
