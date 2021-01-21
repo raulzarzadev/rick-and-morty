@@ -124,7 +124,9 @@ function CharterDetails({ charter }) {
       <div className="card_details--info">
         {details.map((detail) => (
           <div className="card_detail">
-            <div className="card_detail--side-title">{detail.title}: </div>
+            <h4 className="card_detail--side-title">
+              <em>{detail.title}:</em>
+            </h4>
             <div className="card_detail--side-value">{detail.value}</div>
           </div>
         ))}
