@@ -7,12 +7,14 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div>logo</div>
-        <div>Tu personaje favorito de Rick and Morty</div>
-        <nav>
-          <ul>
-            <li>inicio</li>
-            <li>acerca de</li>
+        <div className="header-logo">logo</div>
+        <div className="header-title">
+          Tu personaje favorito de Rick and Morty
+        </div>
+        <nav className="header-navbar">
+          <ul className="navbar">
+            <li className="navbar-item">inicio</li>
+            <li className="navbar-item">acerca de</li>
           </ul>
         </nav>
       </header>

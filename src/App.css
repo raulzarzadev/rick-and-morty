@@ -1,0 +1,17 @@
+.App {
+    background-color: lightskyblue;
+}
+
+@media (min-width:600px) {
+    .App {
+        background-color: gray;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:960px) {
+    .App {
+        background-color: lightgreen;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

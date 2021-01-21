@@ -21,7 +21,6 @@
 }
 
 .charter::after {
-    
     position: absolute;
     top: 0;
     left: 0;
@@ -64,3 +63,4 @@
     text-align: right;
     width: auto;
 }
+

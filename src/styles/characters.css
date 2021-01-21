@@ -1,7 +1,11 @@
 .characters {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    background-color: lightblue;
+}
+
+.title {
+    text-align: center;
+    
 }
 
 .characters_item {
@@ -12,15 +16,12 @@
 
 @media (min-width:600px) {
     .characters {
-        background-color: gray;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width:960px) {
     .characters {
-        background-color: lightgreen;
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
