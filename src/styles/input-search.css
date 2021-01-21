@@ -1,7 +1,7 @@
 .search-box {
-    padding: 16px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-input {
@@ -11,6 +11,11 @@
     text-align: center;
     font-size: 25px;
     width: 200px;
+    background-image: url("../assets/keyboard.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-x: 165px ;
 }
 
 .search-input:active {
@@ -34,15 +39,16 @@
 
 
 .btn-clean {
-    width: fit-content;
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid;
-    margin: 0 auto 30px;
+    box-shadow: 0 10px 20px rgba(48, 24, 24, 0.897);
 }
 
 .btn-clean:hover {
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(48, 24, 24, 0.897);
+}
+.input-icon{
+    width: 25px;
 }

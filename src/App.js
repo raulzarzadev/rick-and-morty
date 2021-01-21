@@ -1,9 +1,9 @@
-import FindInput from "./components/FindInput";
 import logo from "./assets/title-rick-and-morty.png";
 import "./App.css";
 import "./styles/header.css";
 import "./styles/footer.css";
 import "./styles/main.css";
+import CharterDisplay from "./components/CharterDisplay";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </nav>
       </header>
       <main className="main">
-        <FindInput />
+        <CharterDisplay />
       </main>
       <footer className="footer">
         Una app de <a href="https://raulzarza.com">RZ</a>
