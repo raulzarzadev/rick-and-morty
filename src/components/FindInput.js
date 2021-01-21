@@ -72,7 +72,6 @@ function FindInput() {
     }
   }, [search]);
 
-  console.log(loading);
 
   return (
     <div>
