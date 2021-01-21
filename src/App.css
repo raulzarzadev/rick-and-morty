@@ -2,10 +2,24 @@
     background-color: lightskyblue;
 }
 
+.header-logo {
+    width: 100px;
+}
+
+.header-navbar{
+    display: none;
+}
+
 @media (min-width:600px) {
     .App {
         background-color: gray;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .header-navbar{
+        display: block;
+    }
+    .header-logo {
+        width: 150px;
     }
 }
 
@@ -16,6 +30,18 @@
     }
 }
 
-h4 {
+h4,
+h5 {
     margin: 0
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    padding: 8px;
+}
+
+p {
+    margin: 0;
+    font-size: 12px;
 }

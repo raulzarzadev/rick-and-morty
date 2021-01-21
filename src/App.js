@@ -2,19 +2,21 @@ import "./App.css";
 import FindInput from "./components/FindInput";
 import "./styles/header.css";
 import "./styles/main.css";
+import logo from "./assets/title-rick-and-morty.png";
 
 function App() {
   return (
     <div className="App">
       <header className="header">
-        <div className="header-logo">logo</div>
-        <div className="header-title">
-          Todos los personajes de Rick and Morty
-        </div>
+        <a href="/">
+          <img className="header-logo" src={logo} alt="main-logo" />
+        </a>
+
         <nav className="header-navbar">
           <ul className="navbar">
-            <li className="navbar-item">inicio</li>
-            <li className="navbar-item">acerca de</li>
+            <li className="navbar-item">
+              <a href="/">inicio</a>
+            </li>
           </ul>
         </nav>
       </header>

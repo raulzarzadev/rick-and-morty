@@ -6,12 +6,26 @@
 
 .search-input {
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid;
     background: transparent;
     text-align: center;
     font-size: 25px;
+    width: 200px;
 }
 
+@media (min-width: 600px){
+    .search-input::placeholder{
+        color: #fff;
+        opacity: .5;
+    }
+}
+
+@media (min-width: 960px){
+    .search-input::placeholder{
+        color: red;
+        opacity: .5;
+    }
+}
 
 
 .btn-clean {

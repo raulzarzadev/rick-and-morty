@@ -1,0 +1,38 @@
+.loader-container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.loader {
+    width: 120px;
+    height: 120px;
+    border: 32px solid rgba(163, 32, 98, 0.548);
+    border-top: 32px solid #7fc0eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@media (min-width:600px) {
+    .loader {
+        border: 32px solid rgba(0, 0, 0, 0.2);
+        border-top: 32px solid #f3faff;
+    }
+}
+
+@media (min-width:960px) {
+    .loader {
+        border: 32px solid rgba(231, 0, 0, 0.568);
+        border-top: 32px solid #c0fc36;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

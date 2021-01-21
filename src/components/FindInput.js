@@ -3,13 +3,16 @@ import "../styles/charter-card.css";
 import "../styles/characters.css";
 import "../styles/input-search.css";
 import "../styles/charter-details.css";
+import Loading from "./Loading";
 
 function FindInput() {
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState("Escribe el nombre de un personaje");
 
   const handleChange = (e) => {
     setCharterDetails(null);
+    setLoading(true);
     setSearch(e.target.value);
   };
 
@@ -44,25 +47,32 @@ function FindInput() {
 
   useEffect(() => {
     if (search === "") {
+      setLoading(false);
+
       setCharters([]);
       setTitle("Escribe el nombre de tu personaje favorito");
     } else {
       getCharacterByName(search)
         .then((res) => {
           if (res?.error) {
+            setLoading(false);
             setTitle("¡Ups! No hay nadie llamado así por aquí");
             setCharters([]);
           } else {
+            setLoading(false);
             console.log(res);
             setTitle("Selecciona a uno de la lista para ver los detalles");
             setCharters(res.results);
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          setLoading(false);
+          console.log(err);
+        });
     }
   }, [search]);
 
-  console.log(charters);
+  console.log(loading);
 
   return (
     <div>
@@ -80,32 +90,37 @@ function FindInput() {
           id="find"
         />
       </div>
+
       {charterDetails ? (
         <div>
           <div onClick={handleCleanSearch} className="btn-clean">
-            limpiar busqueda
+            Buscar
           </div>
           <CharterDetails charter={charterDetails} />
         </div>
       ) : (
-        <div className="characters">
-          {charters.map((charter) => (
-            <div className="characters_item">
-              <CharterCard
-                charter={charter}
-                handleGetCharter={handleGetCharter}
-              />
+        <>
+          {loading ? (
+            <Loading />
+          ) : (
+            <div className="characters">
+              {charters.map((charter) => (
+                <div className="characters_item">
+                  <CharterCard
+                    charter={charter}
+                    handleGetCharter={handleGetCharter}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
     </div>
   );
 }
 
 function CharterDetails({ charter }) {
-  console.log(charter);
-  console.log(CharterDetails);
   const details = [
     { title: "Nombre", value: charter?.name },
     { title: "Genero", value: charter?.gender },
@@ -149,16 +164,16 @@ function CharterCard({ charter, handleGetCharter }) {
       </div>
       <div className="charter_info">
         <div className="charter_info--item">
-          <div className="item-left">Nombre:</div>
-          <div className="item-rigth"> {charter.name}</div>
+          <h5 className="item-left">Nombre:</h5>
+          <p className="item-rigth"> {charter.name}</p>
         </div>
         <div className="charter_info--item">
-          <div className="item-left">Origen:</div>
-          <div className="item-rigth"> {charter.origin.name}</div>
+          <h5 className="item-left">Origen:</h5>
+          <p className="item-rigth"> {charter.origin.name}</p>
         </div>
         <div className="charter_info--item">
-          <div className="item-left">Especie:</div>
-          <div className="item-rigth"> {charter.species}</div>
+          <h5 className="item-left">Especie:</h5>
+          <p className="item-rigth"> {charter.species}</p>
         </div>
       </div>
     </div>
