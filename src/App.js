@@ -1,8 +1,9 @@
-import "./App.css";
 import FindInput from "./components/FindInput";
-import "./styles/header.css";
-import "./styles/main.css";
 import logo from "./assets/title-rick-and-morty.png";
+import "./App.css";
+import "./styles/header.css";
+import "./styles/footer.css";
+import "./styles/main.css";
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
       <main className="main">
         <FindInput />
       </main>
-      <footer>
-        Una app creada por <a href="https://raulzarza.com">RZ</a>
+      <footer className="footer">
+        Una app de <a href="https://raulzarza.com">RZ</a>
       </footer>
     </div>
   );

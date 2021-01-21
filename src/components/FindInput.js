@@ -8,7 +8,7 @@ import Loading from "./Loading";
 function FindInput() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-  const [title, setTitle] = useState("Escribe el nombre de un personaje");
+  const [title, setTitle] = useState("Personajes de Rick & Morty");
 
   const handleChange = (e) => {
     setCharterDetails(null);
@@ -50,7 +50,7 @@ function FindInput() {
       setLoading(false);
 
       setCharters([]);
-      setTitle("Escribe el nombre de tu personaje favorito");
+      setTitle("Personajes de Rick & Morty");
     } else {
       getCharacterByName(search)
         .then((res) => {
@@ -121,6 +121,19 @@ function FindInput() {
 }
 
 function CharterDetails({ charter }) {
+  let episodes = charter.episode.map((episodio) => {
+    const episodioNo = episodio.split("/");
+    return episodioNo[episodioNo.length - 1];
+  });
+
+  if (episodes.length > 1) {
+    episodes = episodes.join(", ");
+  }
+  if (episodes.length > 50) {
+    episodes = episodes.slice(0, 50).concat(" ...");
+  }
+  console.log(episodes);
+
   const details = [
     { title: "Nombre", value: charter?.name },
     { title: "Genero", value: charter?.gender },
@@ -128,7 +141,7 @@ function CharterDetails({ charter }) {
     { title: "Especie", value: charter?.species },
     { title: "Status", value: charter?.status },
     { title: "Ubicacion", value: charter?.location?.name },
-    { title: "Episodios ", value: charter?.episode?.length },
+    { title: "Episodios", value: episodes },
   ];
   return (
     <div className="card_details">
