@@ -1,20 +1,28 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-name: React app deployement
 
-on:
-  push:
-    branches: main
-  pull_request:
-    branches: main
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Deploy react app to github pages
-      uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
+name: 'Deploy react app to github pages'
+description: 'This action will automate the process of building and depolying react app in gh-pages branch.'
+author: 'tanwanimohit'
+branding:
+  color: blue
+  icon: code
+runs: 
+  using: 'composite'
+  steps: 
+    - run : npm i
+      shell: bash
+    - run : npm ci
+      shell: bash
+    - run : CI=false npm run build
+      shell: bash
+    - run : git config user.name github-actions
+      shell: bash
+    - run : git config user.email github-actions@github.com
+      shell: bash
+    - run : git --work-tree build add --all
+      shell: bash
+    - run : git commit -m "Automatic Deploy action run by github-actions"
+      shell: bash
+    - run : git push origin HEAD:gh-pages --force
+      shell: bash
