@@ -1,5 +1,4 @@
 import React from "react";
-import keyboard from "../assets/keyboard.png";
 
 function SearchInput({
   placeholder,
